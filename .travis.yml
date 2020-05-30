@@ -1,3 +1,4 @@
+
 os: linux
 sudo: required
 language:
@@ -17,10 +18,5 @@ jobs:
     script:
     - ./scripts/genenv.sh
     - docker run --env-file .env -v `pwd`:`pwd` -w `pwd` -t rusdevops/bootstrap-cpp scripts/coverage.sh
-    # The bot has gone...
-    # - docker run --env-file .env -v `pwd`:`pwd` -w `pwd` -t rusdevops/bootstrap-cpp scripts/duplication.sh
-
 notifications:
     email: false
-
-
